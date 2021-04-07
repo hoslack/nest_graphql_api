@@ -4,14 +4,25 @@ import { User } from './models/user'
 @Injectable()
 export class UsersService {
   private users: User[] = []
+  private user: User
 
-  public createUser(): User {}
+  public createUser(): User {
+    return this.user
+  }
 
-  public updateUser(): User {}
+  public updateUser(): User {
+    return this.user
+  }
 
-  public getUser(): User {}
+  public getUser(): User {
+    return this.user
+  }
 
-  public getUsers(): User[] {}
+  public getUsers(): User[] {
+    return this.users
+  }
 
-  public deleteUser(): User {}
+  public deleteUser(): User {
+    return this.user
+  }
 }
