@@ -16,6 +16,7 @@ export class UsersService {
   public createUser(createUserData: CreateUserInput): User {
     const user: User = {
       userId: uuidv4(),
+      isSubscribed: false,
       ...createUserData
     }
     this.users.push(user)
@@ -32,6 +33,10 @@ export class UsersService {
 
   public getUser(getUserArgs: GetUserArgs): User {
     return this.users.find((user) => user.userId === getUserArgs.userId)
+  }
+
+  public getUserByEmail(email: string): User | undefined {
+    return this.users.find((user) => user.email === email)
   }
 
   public getUsers(getUsersArgs: GetUsersArgs): User[] {
